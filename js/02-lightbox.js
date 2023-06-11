@@ -2,6 +2,8 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 // console.log(galleryItems);
 
+// 1. Create and render markup
+
 const galleryEl = document.querySelector(".gallery");
 // console.log(galleryEl);
 
@@ -13,15 +15,16 @@ const markupOfElementsGallery = galleryItems.map(
    </a>
 </li>`
 );
-
 // console.log(markupOfElementsGallery);
 
 galleryEl.insertAdjacentHTML("beforeend", markupOfElementsGallery.join(""));
 
 galleryEl.addEventListener("click", onClick);
 
-function onClick(evt) {
-  evt.preventDefault();
+function onClick(event) {
+  event.preventDefault();
 }
+
+// 2. Adding caption display to images from the alt attribute:
 
 new SimpleLightbox(".gallery a", { captionDelay: 250, captionsData: "alt" });
